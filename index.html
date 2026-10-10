@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTIDIA</title>
+    <!--acá importo la libreria SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--acá relacionó la hoja de estilos-->
+    <link rel="stylesheet" type="text/css" href="Styles/styles.css">
+
+</head>
+<header>
+    
+    <!-- en este punto se crea el menu que aparece en la parte superior de la pantalla -->
+    <nav>   
+        <div class="logo">
+            <h1>NOTIDIA</h1>
+            <p>Periodico digital</p>
+            <span id ="fecha" ></span>
+        </div>
+        <ul class="menu">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Noticias" id="ir-noticia">Noticias</a></li>
+            <li><a href="#Favoritos">Favoritos</a></li>
+            <li><a href="#crear-noticia" id="crearnoticia">Crear noticia</a></li>
+            <li><a href="#Contactenos" id="ir-contacto">Contactenos</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <!-- en este punto, se crea el main para indicar es el contenido principal de la página -->
+    <main>
+        <!-- se crean las secciones, ya que con esta funcionalidad podemos encapsular
+         el contenido de cada opción de menu, y no debemos crear multiples páginas
+         para esta estructura solo manejaremos el index.html-->
+      <section id="Home">
+          <div class="centro">
+            <h5>Bienvenido a NOTIDIA</h5>
+            <h1>El periodismo que</h1>
+            <div class="linea">
+                    <h1 class="ilumina">ilumina</h1>
+                    <h1>tu mundo</h1>
+                <p>Noticias verificadas sobre educación,técnologia,turismo y comercio</p>
+                <p>contenido que importa y redactado con rigor </p>
+                </div>
+            </div>
+            <!--Creamos una clase botones para poder darles diseño y forma mediante estilos
+            su funcion es que al dar clic, en alguno de los dos botones se direccione 
+            a su respectivo apartado-->
+            <div class="Botones">
+                <a href="#Noticias" id="explorar">Explorar noticias</a></li>
+                <a href="#Contactenos" id="contactar"">Contactar</a></li>
+            </div>
+        </section>
+        <!--seccion de noticias, este apartado tendrá las noticias del periodico-->
+        <section id="Noticias">
+            <h2>Archivo de noticias</h2>
+            <!-- se crea la clase grid, esto con el fin de poder ordenar las noticias en 
+             bloques iguales y estas no queden ni desiguales ni amontonadas-->
+            <div class="noticias-grid">
+                <!--la sección card ya es independiente pues acá estará la información
+                de cada noticia con su respectiva imagen, titulo y descripción-->
+                <div class="noticia-card" data-id="N1">
+                    <img src="imagenes/Colombia-Sub-20-1.webp" alt="colombia">
+                    <h5>Colombia vs Corea</h5>
+                    <p class="Dscrpcn"> colombia jugará el día de hoy vs corea del nore</p>
+                    <div class="acciones">
+                        <button class="ver-mas">Ver más</button>
+                        <button class="boton-fav">Favorito</button>
+                    </div>
+                </div>
+                <div class="noticia-card" data-id="N2">
+                    <img src="imagenes/universidad.webp" alt="Terremoto">
+                    <h5>Habilitan fondo escolar para universidades afectadas por el terremoto</h5>
+                    <p class="Dscrpcn">El decreto amplía el objeto de un fondo concebido para colegios públicos, de modo que 
+                    también pueda financiar obras en universidades públicas afectadas por el sismo. ¿Cómo funcionará? </p>
+                    <div class="acciones">
+                        <button class="ver-mas">Ver más</button>
+                        <button class="boton-fav">Favorito</button>
+                    </div>
+                </div>
+                <div class="noticia-card" data-id="N3">
+                    <img src="imagenes/gato.webp" alt="Gato silvestre">
+                    <h5>Cientificos descubren nueva especie de gato silvestre</h5>
+                    <p class="Dscrpcn">Hasta ahora, se creía que solo existía un único grupo de gatos silvestres. 
+                    Pero un estudio basado en el ADN permitió descubrir una nueva especie, y 
+                    determinar que varias subespecies eran en realidad especies nuevas.</p>
+                    <div class="acciones">
+                        <button class="ver-mas">Ver más</button>
+                        <button class="boton-fav">Favorito</button>
+                    </div>
+                </div>
+                <div class="noticia-card" data-id="N4">
+                    <img src="imagenes/estudiantes.webp" alt="estudiantes">
+                    <h5>Uno de cada 10 estudiantes interrumpe su educuación por cambios climaticos</h5>
+                    <p class="Dscrpcn">Más de 171 millones de estudiantes en todo el mundo sufrieron interrupciones en su educación 
+                    durante 2025 debido a tormentas, inundaciones, olas de calor, entre otros peligros climáticos, 
+                    reveló UNICEF. Colombia aparece entre los países en los que se reportaron afectaciones.</p>
+                    <div class="acciones">
+                        <button class="ver-mas">Ver más</button>
+                        <button class="boton-fav">Favorito</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section id="Favoritos">
+            <h2>Mis favoritos</h2>
+                <div class="noticias-grid" id="lista-fav">          
+            </div>
+        </section>
+        <!--Seccion de contactenos, en esta opción tendremos dos apartados o DIVS, 
+        pues en el lado ezquierdo ira la información del periodico y en el derecho 
+        el formulario con el cual interactuará el cliente. -->
+        <!-- Sección de Contacto -->
+        <section id="Contactenos" class="container my-5">
+          <h2>Estamos aquí</h2>
+
+          <!-- Este div principal nos permite organizar dos bloques: 
+              a la izquierda la información de contacto y a la derecha el formulario -->
+          <div class="principal d-flex justify-content-between">
+
+            <!-- Bloque de información de contacto -->
+            <div class="contacta">
+              <h2>Contacto</h2>
+              <p>¿Tienes una historia que contar, una corrección que reportar
+                o simplemente quieres saludar? Te responderemos en menos de 24 horas</p>
+
+              <!-- Datos de contacto -->
+              <p><h5><strong>Correo:</strong></h5> redaccion@notidia.com</p>
+              <p><h5><strong>Teléfono:</strong></h5> +57 601 333 333 33</p>
+              <p><h5><strong>Dirección:</strong></h5> calle 15 -1 Tunja-Boyacá</p>
+              <p><h5><strong>Horario:</strong></h5> Lunes a viernes de 8:00 am a 6:00 pm</p>
+            </div>
+
+            <!-- Bloque del formulario -->
+            <div class="formulario">x|
+              <h1>Formulario de contacto</h1>
+              <form id="form-contacto">
+                <p><label for="nombre">NOMBRE COMPLETO *</label></p>
+                <p><input type="text" id="nombre" name="nombre" maxlength="30" required></p>
+
+                <p><label for="email">CORREO ELECTRÓNICO *</label></p>
+                <p><input type="email" id="email" name="email" maxlength="50" required></p>
+
+                <p><label for="asunto">ASUNTO</label></p>
+                <p><input type="text" id="asunto" name="asunto" maxlength="50"></p>
+
+                <p><label for="mensaje">MENSAJE *</label></p>
+                <!-- textarea: permite escribir un texto largo -->
+                <textarea id="mensaje" name="mensaje" maxlength="200" required></textarea>
+
+                <!-- Botón de envío -->
+                <button type="submit" class="boton-msj btn btn-primary mt-3">ENVIAR MENSAJE</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!--se crea esta opción para la creación de noticias, es un formulario.-->
+       <section id="crear-noticia">
+          <h4>panel de administración</h4>
+          <h1>Crear noticia</h1>
+          <div class="principal">
+            <form id="form-noticia">
+              <p><label for="titulo">TITULO *</label></p>
+              <p><input type="text" id="titulo" name="titulo" maxlength="50"></p>
+
+              <p><label for="autor">AUTOR *</label></p>
+              <p><input type="text" id="autor" name="autor" maxlength="30"></p>
+
+              <p><label for="categoria">CATEGORIA</label></p>
+              <p>
+                <select id="categoria" name="categoria">
+                  <option value="">-- Selecciona una opción --</option>
+                  <option value="Deporte">Deporte</option>
+                  <option value="Educación">Educación</option>
+                  <option value="Ciencia">Ciencia</option>
+                </select>
+              </p>
+
+              <p><label for="msje">MENSAJE COMPLETO *</label></p>
+              <textarea id="msje" name="msje" maxlength="200"></textarea>
+
+
+              <p><label for="imagen">IMAGEN *</label></p>
+              <input type="file" id="imagen" name="imagen" accept="image/*">
+
+              <button type="submit" class="btn-publicar">PUBLICAR NOTICIA</button>
+              <button type="reset" class="btn-cancelar">Cancelar</button>
+            </form>
+          </div>
+       </section>
+
+    </main>
+    <!-- se crea el footer para crear el pie de página con la información de periodico-->
+    <footer>
+      <div class="footer-contenido">
+        <div class="footer-seccion">
+          <h3>Contacto</h3>
+          <p>Teléfono: +57 300 123 4567</p>
+          <p>Dirección: Calle 123, Tunja, Boyacá</p>
+        </div>
+
+        <div class="footer-seccion">
+          <h3>Correos</h3>
+          <p>info@notidia.com</p>
+          <p>contacto@notidia.com</p>
+          <p>soporte@notidia.com</p>
+        </div>
+
+        <div class="footer-seccion">
+          <h3>Redes Sociales</h3>
+          <p><a href="#">Facebook</a></p>
+          <p><a href="#">Twitter</a></p>
+          <p><a href="#">Instagram</a></p>
+        </div>
+      </div>
+    </footer>
+
+ <!--se relaciona el JS, es el que al momento realiza las animaciones al dar clic en algunna
+ opción de menú-->
+<script src="js/noticias.js"></script>
+  <!-- Librería SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Tu archivo JS con la lógica -->
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+
+/* se deja el fondo de color azul*/
+body {
+background-color: #002b5c;
+}
+
+/* el texto de fecha que va en la cabecera se define como span para que no tenga 
+saltos de linea */
+.logo span{
+color: white;
+}
+
+
+nav  {
+border-bottom: 2px solid orange; /* se crea para dar un borde naranja debajo del menu*/ 
+display: flex;  /* lo utilizamos para organizar  los div de el logo y las opciones de menu */    
+justify-content: space-between; /* distribuimos los dos divs*/
+align-items: center; /*centramos verticalmente la información de los divs*/
+background-color: #002b5c;
+padding: 10px 20px;
+margin: 0;  
+position: fixed; /*dejamos el panel fijo, es decir cuando deslizamos la página hacia abajo
+el menú baja junto con la página, es decir, siempre estará visible*/
+top: 00;             
+left: 0;
+width: 97%;          
+}
+
+/*atributos para las etiquetas  de la clase logo*/
+nav .logo h1{
+color: white;
+margin: 0;
+}
+nav .logo p{
+margin: 0;
+color:orange;
+font-size: 0.9em;
+}
+
+nav .menu {
+list-style: none; /*elimina los puntos de las listas*/
+display: flex;
+}
+
+/* da un espacio a los items del menú no quedan unidos*/
+nav .menu li{
+margin-left: 20px;
+
+}
+
+nav .menu a {
+text-decoration: none; /* al ser un <a href> el sistema les asigna una raya debajo, 
+esta opción elimina esa linea*/
+font-weight: bold; /*pone en negrilla la letra, la hace mas visible*/
+color: white;
+
+}
+/* esta opción hace que al pasar el mouse por encima de las opciones de menu, la letra quede
+en color amarillo*/
+nav .menu a:hover {
+color: orange;
+
+}
+
+/* en este punto le ponemos estilos al texto que aparece de inicio en la panralla*/
+.centro {
+margin: 100px 0px 50px 0px;
+text-align: center;    
+}
+.centro h5 {
+color: orange;
+font-size: 2em;
+margin: 0;
+}
+.centro h1 {
+
+font-family: fantasy;
+font-size: 7em;
+color: white;
+margin: 0;
+}
+
+.linea h1 {
+display: inline;
+margin: 0;
+font-family: fantasy;
+}
+.centro .ilumina {
+color: orange;
+margin: 0 5px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.centro p {
+margin: 0;
+color: gray;
+}
+
+/* le damos diseño y forma a los botones (explorar noticia y contactar */
+.Botones {
+text-align: center;
+
+}
+.Botones a {
+display: inline-block;   
+width: 200px;            
+height: 40px;            
+line-height: 40px;       
+text-align: center;      
+border: 2px solid #003366;
+border-radius: 5px;
+text-decoration: none;
+font-weight: bold;
+cursor: pointer;
+}
+
+
+#explorar {
+
+background-color: orange;
+color: white;
+text-decoration: none;
+}
+#explorar:hover{
+background-color: black;
+color: orange;
+}
+#contactar{
+text-align: center;
+background-color: white;
+color: black;
+text-decoration: none;
+}
+
+#contactar:hover {
+background-color: black;
+color: orange
+}
+#noticias {
+background-color: #fff;
+padding: 20px;
+}
+#Noticias h2 {
+color: orange;
+}
+
+/* acá le damos los atributos a cada caja de las noticias*/
+.noticias-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);  /*ordena las cajas en 3 por fila*/
+gap: 1%;
+padding: 1%;
+}
+
+/* se dan los atributos de las cajas, lo que va por dentro*/
+.noticia-card { 
+background-color: #fff;
+text-align: center;
+border-radius: 8px;
+padding: 3%;
+}
+/*indica las dimensiones que tendrá la imagen en cada caja*/
+.noticia-card img {
+width: 90%;
+height: 50%;
+object-fit: cover;  /* recorta la imagen para que no se deforme */
+border-radius: 6px; /* opcional: esquinas redondeadas */
+display: block;     /* asegura que se comporte como bloque */
+margin: 0 auto; 
+}
+
+/*los tributos de los botones de cada caja*/
+.ver-mas{
+width: 120px;
+height: 40px;
+text-align: center;
+background-color: orange;
+color: white;
+text-decoration: none;
+}
+
+.Dscrpcn {
+overflow: hidden;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+}
+
+/* en este punto le indicamos cuando se seleccione ver mas se muestre toda la ifnromación*/
+.Dscrpcn.expandida {
+-webkit-line-clamp: unset;
+}
+
+
+.ver-mas:hover{
+color: orange;
+background-color: black;
+}
+.boton-fav{
+width: 120px;
+height: 40px;
+text-align: center;
+background-color: white;
+color: black;
+text-decoration: none;
+}
+
+.boton-fav:hover{
+color: orange;
+background-color: black;
+}
+#lista-fav button{
+width: 120px;
+height: 40px;
+text-align: center;
+background-color: orange;
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+#Favoritos h2{
+color: orange;
+
+}
+
+#Contactenos h2{
+color: orange;
+}
+#Contactenos h1{
+color: black;
+}
+
+/* se da color y forma a la sección contactenos*/
+#Contactenos .principal {
+padding: 15px;
+background-color: beige;
+display: flex;              
+justify-content: space-between; 
+align-items: flex-start;
+
+}
+.principal h5{
+
+color: orange;
+}
+
+/*atributos del div formulario de la sección contactenos*/
+.formulario {
+background-color: white;
+color: black;
+cursor: pointer;
+padding: 0px 100px 0px 40px;
+margin: 0px 30px;
+border-radius: 15px;
+border: 2px solid black;
+}
+
+.formulario p {
+margin: 10px;
+}
+
+.formulario input {
+width: 100%;
+height: 30px;
+}
+
+.formulario textarea{
+width: 100%;
+height: 100px;
+}
+.boton-msj{
+margin: 20px 0px;
+width: 100%;
+height: 40px;
+background-color: black;
+color: white;
+cursor: pointer;
+}
+/* atributos color y forma a la sección de creación de noticias*/
+#crear-noticia h4 {
+color: orange;
+}
+#crear-noticia h1{
+color: white;
+border-color: orange;
+}
+#crear-noticia .principal {
+background-color: white;
+margin: 0px 130px;
+padding: 10px;
+text-align: center;
+}
+#crear-noticia input{
+width: 80%;
+height: 30px;
+}
+#crear-noticia select {
+width: 80%;      
+height: 40px;     
+padding: 8px;     
+font-size: 16px;  
+border-radius: 4px;
+}
+#crear-noticia textarea {
+width: 80%;      
+height: 40px;     
+padding: 8px;     
+font-size: 16px;  
+border-radius: 4px;   
+}
+#crear-noticia .btn-publicar{
+width: 20%;
+height: 40px;
+background-color: #001f40;
+color: white;
+cursor: pointer;
+
+}
+#crear-noticia .btn-cancelar{
+width: 20%;
+height: 40px;
+background-color: white;
+color: black;
+border-color: #001f40;
+cursor: pointer;
+}
+/*color y forma a la sección del pie de pagina*/
+footer {
+background-color: #001f40; 
+color: white;
+padding: 20px 0;
+margin-top: 40px;
+}
+
+.footer-contenido {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap; 
+text-align: left;
+}
+
+
+.footer-seccion {
+margin: 10px;
+}
+
+.footer-seccion h3 {
+color: orange;
+margin-bottom: 10px;
+}
+
+.footer-seccion a {
+color: white;
+text-decoration: none;
+}
+
+.footer-seccion a:hover {
+color: orange;
+}
+
